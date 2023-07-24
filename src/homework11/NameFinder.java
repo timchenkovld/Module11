@@ -16,7 +16,7 @@ public class NameFinder {
     private static List<String> getAddIndexedNames(List<String> names) {
         return IntStream.range(0, names.size())
                 .filter(index -> index % 2 != 0)
-                .mapToObj(names::get)
+                .mapToObj(index1 -> index1 + ". " +  names.get(index1))
                 .collect(Collectors.toList());
     }
 }
